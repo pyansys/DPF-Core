@@ -5,8 +5,8 @@
 
 Computation times
 =================
-**00:01.651** total execution time for **examples_01-static-transient** files:
+**00:01.667** total execution time for **examples_01-static-transient** files:
 
 +------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_examples_01-static-transient_00-basic_transient.py` (``00-basic_transient.py``) | 00:01.651 | 0.0 MB |
+| :ref:`sphx_glr_examples_01-static-transient_00-basic_transient.py` (``00-basic_transient.py``) | 00:01.667 | 0.0 MB |
 +------------------------------------------------------------------------------------------------+-----------+--------+

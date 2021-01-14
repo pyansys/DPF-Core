@@ -259,31 +259,31 @@ displacement operator.</p>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Available inputs:
-     -   [1mmesh[0m : MeshedRegion, optional
-
-     -   [1mdomain_id[0m : int, optional
-
      -   [1mbool_rotate_to_global[0m : B, optional
          If true the field is roated to global coordinate system (default true)
 
-     -   [1mrequested_location[0m : str, optional
+     -   [1mmesh[0m : MeshedRegion, optional
 
-     -   [1mstreams_container[0m : StreamsContainer, optional
-         Streams (result file container) (optional)
+     -   [1mdata_sources[0m : DataSources
+         If the stream is null then we need to get the file path from the data
+         sources
 
      -   [1mmesh_scoping[0m : ScopingsContainer, Scoping, optional
          Mesh entities scoping, unordered_map&lt;int, int&gt; id to index (optional)
          (index is optional, to be set if a user wants the results at a given
          order)
 
-     -   [1mdata_sources[0m : DataSources
-         If the stream is null then we need to get the file path from the data
-         sources
+     -   [1mstreams_container[0m : StreamsContainer, optional
+         Streams (result file container) (optional)
+
+     -   [1mrequested_location[0m : str, optional
+
+     -   [1mtime_scoping[0m : Scoping, list, optional
+
+     -   [1mdomain_id[0m : int, optional
 
      -   [1mfields_container[0m : FieldsContainer, optional
          Fields container already allocated modified inplace
-
-     -   [1mtime_scoping[0m : Scoping, list, optional
 
 
 Available outputs:
@@ -382,7 +382,7 @@ Available results:
 [1.48153706e-08]
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.106 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.086 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-00-basic-01-basic-operators-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/9aa372dff2fc2ef917214ce9663244c9/01-basic_operators.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">01-basic_operators.py</span></code></a></p>
