@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>API Reference &#8212; PyANSYS DPF 0.2.0 documentation</title>
+    <title>FieldsContainer Class &#8212; PyANSYS DPF 0.2.0 documentation</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -41,8 +41,8 @@
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Data Sources Class" href="data_sources.html" />
-    <link rel="prev" title="The DPF Model" href="../user_guide/model.html" />
+    <link rel="next" title="MeshedRegion Class" href="meshed_region.html" />
+    <link rel="prev" title="Field Class" href="field.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
   </head>
@@ -73,7 +73,7 @@
         </li>
         
         <li class="nav-item active">
-            <a class="nav-link" href="">API Reference</a>
+            <a class="nav-link" href="index.html">API Reference</a>
         </li>
         
         <li class="nav-item ">
@@ -162,8 +162,8 @@
             
           
             
-                <li class="">
-                    <a href="fieldscontainer.html">FieldsContainer Class</a>
+                <li class="active">
+                    <a href="">FieldsContainer Class</a>
                 </li>
             
           
@@ -235,24 +235,101 @@
               
               <div>
                 
-  <div class="section" id="api-reference">
-<span id="ref-api-index"></span><h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h1>
-<p>This section gives an overview of the API of several public DPF-Core
-classes and functions.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="data_sources.html">Data Sources Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="element.html">Element Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="elements.html">Elements Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="field.html">Field Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fieldscontainer.html">FieldsContainer Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="meshed_region.html">MeshedRegion Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model.html">Model Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="operator.html">Operator Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="plotting.html">Plotter Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="wrapped_operators.html">Wrapped Operators</a></li>
+  <div class="section" id="fieldscontainer-class">
+<h1>FieldsContainer Class<a class="headerlink" href="#fieldscontainer-class" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="ansys.dpf.core.fields_container.FieldsContainer">
+<em class="property">class </em><code class="sig-prename descclassname">ansys.dpf.core.fields_container.</code><code class="sig-name descname">FieldsContainer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fields_container</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">channel</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.fields_container.FieldsContainer" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class used to represent a FieldsContainer which contains
+fields belonging to an analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fields_container</strong> (<em>ansys.grpc.dpf.fields_container_pb2.FieldsContainer</em><em>, </em><em>optional</em>) – Create a fields container from a FieldsContainer message.</p></li>
+<li><p><strong>channel</strong> (<em>channel</em><em>, </em><em>optional</em>) – Channel connected to the remote or local instance. When
+<code class="docutils literal notranslate"><span class="pre">None</span></code>, attempts to use the the global channel.</p></li>
 </ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="ansys.dpf.core.fields_container.FieldsContainer.add_field">
+<code class="sig-name descname">add_field</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label_space</span></em>, <em class="sig-param"><span class="n">field</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.fields_container.FieldsContainer.add_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update or add the field at a requested scoping.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>label_space</strong> (<em>dict</em><em>(</em><em>string:int</em><em>)</em>) – label_space of the requested fields, ex : {“time”:1, “complex”:0}</p></li>
+<li><p><strong>field</strong> (<em>dpf.core.Field</em>) – DPF field to add.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.dpf.core.fields_container.FieldsContainer.get_fields">
+<code class="sig-name descname">get_fields</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label_space_or_index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.fields_container.FieldsContainer.get_fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the fields at a requested index or scoping</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>(</strong><strong>optional</strong><strong>)</strong> (<em>label_space_or_index</em>) – Scoping of the requested fields, for example:
+<code class="docutils literal notranslate"><span class="pre">{&quot;time&quot;:</span> <span class="pre">1,</span> <span class="pre">&quot;complex&quot;:</span> <span class="pre">0}</span></code>
+or Index of the field.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>fields</strong> – fields corresponding to the request</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list of fields or field (if only one)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.dpf.core.fields_container.FieldsContainer.get_fields_by_time_complex_ids">
+<code class="sig-name descname">get_fields_by_time_complex_ids</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">timeid</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">complexid</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.fields_container.FieldsContainer.get_fields_by_time_complex_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the fields at a requested index or scoping</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>timeid</strong> (<em>int</em><em>, </em><em>optional</em>) – The time id.  Index of the result set.</p></li>
+<li><p><strong>(</strong><strong>optional</strong><strong>)</strong> (<em>complexid</em>) – The complex id.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>fields</strong> – fields corresponding to the request</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list of fields</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.dpf.core.fields_container.FieldsContainer.select_component">
+<code class="sig-name descname">select_component</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.fields_container.FieldsContainer.select_component" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns fields containing only the component index.</p>
+<p>Can only select by component index as multiple fields may
+contain different number of components.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – Component index.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>fields</strong> – Fields container with one component selected in each field.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>ansys.dpf.core.FieldsContainer</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Select using a component index</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">disp_x_fields</span> <span class="o">=</span> <span class="n">disp_fields</span><span class="o">.</span><span class="n">select_component</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
 </div>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -261,8 +338,8 @@ classes and functions.</p>
               
               <div class='prev-next-bottom'>
                 
-    <a class='left-prev' id="prev-link" href="../user_guide/model.html" title="previous page">The DPF Model</a>
-    <a class='right-next' id="next-link" href="data_sources.html" title="next page">Data Sources Class</a>
+    <a class='left-prev' id="prev-link" href="field.html" title="previous page">Field Class</a>
+    <a class='right-next' id="next-link" href="meshed_region.html" title="next page">MeshedRegion Class</a>
 
               </div>
               

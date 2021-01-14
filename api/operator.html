@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>API Reference &#8212; PyANSYS DPF 0.2.0 documentation</title>
+    <title>Operator Class &#8212; PyANSYS DPF 0.2.0 documentation</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -41,8 +41,8 @@
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Data Sources Class" href="data_sources.html" />
-    <link rel="prev" title="The DPF Model" href="../user_guide/model.html" />
+    <link rel="next" title="Plotter Class" href="plotting.html" />
+    <link rel="prev" title="Model Class" href="model.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
   </head>
@@ -73,7 +73,7 @@
         </li>
         
         <li class="nav-item active">
-            <a class="nav-link" href="">API Reference</a>
+            <a class="nav-link" href="index.html">API Reference</a>
         </li>
         
         <li class="nav-item ">
@@ -180,8 +180,8 @@
             
           
             
-                <li class="">
-                    <a href="operator.html">Operator Class</a>
+                <li class="active">
+                    <a href="">Operator Class</a>
                 </li>
             
           
@@ -235,24 +235,68 @@
               
               <div>
                 
-  <div class="section" id="api-reference">
-<span id="ref-api-index"></span><h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h1>
-<p>This section gives an overview of the API of several public DPF-Core
-classes and functions.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="data_sources.html">Data Sources Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="element.html">Element Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="elements.html">Elements Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="field.html">Field Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fieldscontainer.html">FieldsContainer Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="meshed_region.html">MeshedRegion Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model.html">Model Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="operator.html">Operator Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="plotting.html">Plotter Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="wrapped_operators.html">Wrapped Operators</a></li>
+  <div class="section" id="operator-class">
+<h1>Operator Class<a class="headerlink" href="#operator-class" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">dpf.Operator</span></code> class used to represent an Operator which is an
+elementary operation.</p>
+<dl class="py class">
+<dt id="ansys.dpf.core.dpf_operator.Operator">
+<em class="property">class </em><code class="sig-prename descclassname">ansys.dpf.core.dpf_operator.</code><code class="sig-name descname">Operator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">channel</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.dpf_operator.Operator" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class used to represent an Operator which is an elementary
+operation.</p>
+<p>A list of existing operators can be asked through the “html_doc”
+operator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of the operator.  For example ‘U’.</p></li>
+<li><p><strong>channel</strong> (<em>channel</em><em>, </em><em>optional</em>) – Channel connected to the remote or local instance. Defaults to
+the global channel.</p></li>
 </ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create an operator from a string</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys</span> <span class="kn">import</span> <span class="n">dpf</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disp_oper</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s1">&#39;U&#39;</span><span class="p">)</span>
+</pre></div>
 </div>
+<p>Create an operator from a model</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys</span> <span class="kn">import</span> <span class="n">dpf</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="s1">&#39;file.rst&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disp_oper</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">operator</span><span class="p">(</span><span class="s1">&#39;U&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="ansys.dpf.core.dpf_operator.Operator.connect">
+<code class="sig-name descname">connect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pin</span></em>, <em class="sig-param"><span class="n">inpt</span></em>, <em class="sig-param"><span class="n">pin_out</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.dpf_operator.Operator.connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connect an input on the operator using a pin number.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pin</strong> (<em>int</em>) – Number of the input pin.</p></li>
+<li><p><strong>inpt</strong> (<em>str</em><em>, </em><em>int</em><em>, </em><em>double</em><em>, </em><a class="reference internal" href="field.html#ansys.dpf.core.field.Field" title="ansys.dpf.core.field.Field"><em>Field</em></a><em>, </em><a class="reference internal" href="fieldscontainer.html#ansys.dpf.core.fields_container.FieldsContainer" title="ansys.dpf.core.fields_container.FieldsContainer"><em>FieldsContainer</em></a><em>, </em><em>Scoping</em><em>, </em><a class="reference internal" href="data_sources.html#ansys.dpf.core.data_sources.DataSources" title="ansys.dpf.core.data_sources.DataSources"><em>DataSources</em></a>) – Object you wish to connect to.</p></li>
+<li><p><strong>pin_out</strong> (<em>int</em><em>, </em><em>optional</em>) – In case of the input is an Operator, this is the output
+pin of the input Operator.  Defaults to 0</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.dpf.core.dpf_operator.Operator.get_output">
+<code class="sig-name descname">get_output</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.dpf_operator.Operator.get_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Capture gRPC exceptions</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.dpf.core.dpf_operator.Operator.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.dpf_operator.Operator.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate this operator</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -261,8 +305,8 @@ classes and functions.</p>
               
               <div class='prev-next-bottom'>
                 
-    <a class='left-prev' id="prev-link" href="../user_guide/model.html" title="previous page">The DPF Model</a>
-    <a class='right-next' id="next-link" href="data_sources.html" title="next page">Data Sources Class</a>
+    <a class='left-prev' id="prev-link" href="model.html" title="previous page">Model Class</a>
+    <a class='right-next' id="next-link" href="plotting.html" title="next page">Plotter Class</a>
 
               </div>
               

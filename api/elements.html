@@ -1,0 +1,454 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elements Class &#8212; PyANSYS DPF 0.2.0 documentation</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/ansys.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Field Class" href="field.html" />
+    <link rel="prev" title="Element Class" href="element.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
+
+    <a class="navbar-brand" href="../index.html">
+    
+      <img src="../_static/pyansys-logo-black-cropped.png" class="logo" alt="logo" />
+    
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../getting_started/index.html">Getting Started</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../user_guide/index.html">User Guide</a>
+        </li>
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="index.html">API Reference</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../examples/index.html">Examples Gallery</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href=""></a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href=""></a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href=""></a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../contributing.html">Contributing</a>
+        </li>
+        
+        
+      </ul>
+
+
+      
+
+      <ul class="navbar-nav">
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/pyansys/DPF-Core" target="_blank" rel="noopener">
+              <span><i class="fab fa-github-square"></i></span>
+            </a>
+          </li>
+        
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+    <div class="bd-toc-item active">
+    
+  
+    <ul class="nav bd-sidenav">
+        
+        
+        
+        
+        
+        
+          
+            
+                <li class="">
+                    <a href="data_sources.html">Data Sources Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="element.html">Element Class</a>
+                </li>
+            
+          
+            
+                <li class="active">
+                    <a href="">Elements Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="field.html">Field Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="fieldscontainer.html">FieldsContainer Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="meshed_region.html">MeshedRegion Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="model.html">Model Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="operator.html">Operator Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="plotting.html">Plotter Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="wrapped_operators.html">Wrapped Operators</a>
+                </li>
+            
+          
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+  
+  </nav>
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+    </ul>
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="elements-class">
+<h1>Elements Class<a class="headerlink" href="#elements-class" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="ansys.dpf.core.meshed_region.Elements">
+<em class="property">class </em><code class="sig-prename descclassname">ansys.dpf.core.meshed_region.</code><code class="sig-name descname">Elements</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mesh</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.meshed_region.Elements" title="Permalink to this definition">¶</a></dt>
+<dd><p>Elements belonging to a <code class="docutils literal notranslate"><span class="pre">meshed_region</span></code>.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ansys.dpf.core</span> <span class="k">as</span> <span class="nn">dpf</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">examples</span><span class="o">.</span><span class="n">static_rst</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">elements</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">meshed_region</span><span class="o">.</span><span class="n">elements</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">elements</span><span class="p">)</span>
+<span class="go">DPF Elements object with 24982 elements</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="ansys.dpf.core.meshed_region.Elements.connectivities_field">
+<em class="property">property </em><code class="sig-name descname">connectivities_field</code><a class="headerlink" href="#ansys.dpf.core.meshed_region.Elements.connectivities_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connectivity field</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>connectivities_field</strong> – Field of the node indices associated to each element.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="field.html#ansys.dpf.core.field.Field" title="ansys.dpf.core.field.Field">Field</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">field</span> <span class="o">=</span> <span class="n">elements</span><span class="o">.</span><span class="n">connectivities_field</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">field</span><span class="o">.</span><span class="n">data</span>
+<span class="go">array([ 523,  532,  531, ..., 2734, 2732, 2736], dtype=int32)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.dpf.core.meshed_region.Elements.element_by_id">
+<code class="sig-name descname">element_by_id</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="element.html#ansys.dpf.core.meshed_region.Element" title="ansys.dpf.core.meshed_region.Element">ansys.dpf.core.meshed_region.Element</a><a class="headerlink" href="#ansys.dpf.core.meshed_region.Elements.element_by_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an element using its element number (id).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>int</em>) – Element number.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>DPF Element</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="element.html#ansys.dpf.core.meshed_region.Element" title="ansys.dpf.core.meshed_region.Element">Element</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.dpf.core.meshed_region.Elements.element_by_index">
+<code class="sig-name descname">element_by_index</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="element.html#ansys.dpf.core.meshed_region.Element" title="ansys.dpf.core.meshed_region.Element">ansys.dpf.core.meshed_region.Element</a><a class="headerlink" href="#ansys.dpf.core.meshed_region.Elements.element_by_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an element using its index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – Zero-based index.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>DPF Element.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="element.html#ansys.dpf.core.meshed_region.Element" title="ansys.dpf.core.meshed_region.Element">Element</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>elements.element_by_index(0)</p>
+<p class="rubric">Notes</p>
+<p>This is equivalent to <code class="docutils literal notranslate"><span class="pre">elements[0]</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.dpf.core.meshed_region.Elements.element_types_field">
+<em class="property">property </em><code class="sig-name descname">element_types_field</code><a class="headerlink" href="#ansys.dpf.core.meshed_region.Elements.element_types_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Element types field</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>element_types_field</strong> – Field of all the element types.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="field.html#ansys.dpf.core.field.Field" title="ansys.dpf.core.field.Field">Field</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">field</span> <span class="o">=</span> <span class="n">elements</span><span class="o">.</span><span class="n">element_types_field</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">field</span><span class="o">.</span><span class="n">data</span>
+<span class="go">array([0, 0, 0, ..., 0, 0, 0], dtype=int32)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.dpf.core.meshed_region.Elements.map_scoping">
+<code class="sig-name descname">map_scoping</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">external_scope</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.meshed_region.Elements.map_scoping" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the indices to map the scoping of these elements to
+the scoping of a field.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>external_scope</strong> (<em>scoping.Scoping</em>) – Scoping to map to.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>indices</strong> (<em>numpy.ndarray</em>) – List of indices to map from the external scope to the
+scoping of these elements.</p></li>
+<li><p><strong>mask</strong> (<em>numpy.ndarray</em>) – Members of the external scope that are in the element scoping.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Return the indices that map a field to an elements collection.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ansys.dpf.core</span> <span class="k">as</span> <span class="nn">dpf</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">examples</span><span class="o">.</span><span class="n">static_rst</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">elements</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">meshed_region</span><span class="o">.</span><span class="n">elements</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vol</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">volume</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">field</span> <span class="o">=</span> <span class="n">vol</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">field_containers</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ind</span><span class="p">,</span> <span class="n">mask</span> <span class="o">=</span> <span class="n">elements</span><span class="o">.</span><span class="n">map_scoping</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">scoping</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ind</span>
+<span class="go">[66039</span>
+<span class="go"> 11284,</span>
+<span class="go"> 26474,</span>
+<span class="go"> 11286,</span>
+<span class="go"> 27090,</span>
+<span class="go"> 26656,</span>
+<span class="go"> 11287,</span>
+<span class="go"> ...]</span>
+</pre></div>
+</div>
+<p>These indices can then be used to remap <code class="docutils literal notranslate"><span class="pre">field.data</span></code> to
+match the order of the elements.  That way the field data matches the
+order of the elements in the <code class="docutils literal notranslate"><span class="pre">meshed_region</span></code></p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mapped_data</span> <span class="o">=</span> <span class="n">field</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.dpf.core.meshed_region.Elements.mapping_id_to_index">
+<em class="property">property </em><code class="sig-name descname">mapping_id_to_index</code><a class="headerlink" href="#ansys.dpf.core.meshed_region.Elements.mapping_id_to_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mapping between the ids and indices of the entity.</p>
+<p>Useful for mapping scalar results from a field to this meshed region.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">meshed_region</span><span class="o">.</span><span class="n">mapping_id_to_index</span>
+<span class="go">{28947: 0,</span>
+<span class="go"> 29502: 1,</span>
+<span class="go"> 29101: 2,</span>
+<span class="go"> 28563: 3,</span>
+<span class="go"> 29503: 4,</span>
+<span class="gp">...</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.dpf.core.meshed_region.Elements.materials_field">
+<em class="property">property </em><code class="sig-name descname">materials_field</code><a class="headerlink" href="#ansys.dpf.core.meshed_region.Elements.materials_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Capture gRPC exceptions</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.dpf.core.meshed_region.Elements.n_elements">
+<em class="property">property </em><code class="sig-name descname">n_elements</code><a class="headerlink" href="#ansys.dpf.core.meshed_region.Elements.n_elements" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of elements</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.dpf.core.meshed_region.Elements.scoping">
+<em class="property">property </em><code class="sig-name descname">scoping</code><a class="headerlink" href="#ansys.dpf.core.meshed_region.Elements.scoping" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Scoping of the elements.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">scoping</span><span class="p">)</span>
+<span class="go">DPF Scoping Object</span>
+<span class="go">Size: 24982</span>
+<span class="go">Location: Elemental</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="element.html" title="previous page">Element Class</a>
+    <a class='right-next' id="next-link" href="field.html" title="next page">Field Class</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2021, ANSYS.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

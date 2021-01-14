@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>API Reference &#8212; PyANSYS DPF 0.2.0 documentation</title>
+    <title>Data Sources Class &#8212; PyANSYS DPF 0.2.0 documentation</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -41,8 +41,8 @@
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Data Sources Class" href="data_sources.html" />
-    <link rel="prev" title="The DPF Model" href="../user_guide/model.html" />
+    <link rel="next" title="Element Class" href="element.html" />
+    <link rel="prev" title="API Reference" href="index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
   </head>
@@ -73,7 +73,7 @@
         </li>
         
         <li class="nav-item active">
-            <a class="nav-link" href="">API Reference</a>
+            <a class="nav-link" href="index.html">API Reference</a>
         </li>
         
         <li class="nav-item ">
@@ -138,8 +138,8 @@
         
           
             
-                <li class="">
-                    <a href="data_sources.html">Data Sources Class</a>
+                <li class="active">
+                    <a href="">Data Sources Class</a>
                 </li>
             
           
@@ -235,24 +235,89 @@
               
               <div>
                 
-  <div class="section" id="api-reference">
-<span id="ref-api-index"></span><h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h1>
-<p>This section gives an overview of the API of several public DPF-Core
-classes and functions.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="data_sources.html">Data Sources Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="element.html">Element Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="elements.html">Elements Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="field.html">Field Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fieldscontainer.html">FieldsContainer Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="meshed_region.html">MeshedRegion Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model.html">Model Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="operator.html">Operator Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="plotting.html">Plotter Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="wrapped_operators.html">Wrapped Operators</a></li>
+  <div class="section" id="data-sources-class">
+<h1>Data Sources Class<a class="headerlink" href="#data-sources-class" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="ansys.dpf.core.data_sources.DataSources">
+<em class="property">class </em><code class="sig-prename descclassname">ansys.dpf.core.data_sources.</code><code class="sig-name descname">DataSources</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">result_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">data_sources</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">channel</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.data_sources.DataSources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represent the file sources of a model.</p>
+<p>Initialize the data_sources with either optional data_sources
+message, or by connecting to a stub.  Result path can also be
+directly set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>result_path</strong> (<em>str</em><em>, </em><em>optional</em>) – path of the result</p></li>
+<li><p><strong>data_sources</strong> (<em>ansys.grpc.dpf.data_sources_pb2.DataSources</em>) – gRPC data sources message.</p></li>
+<li><p><strong>channel</strong> (<em>channel</em><em>, </em><em>optional</em>) – Channel connected to the remote or local instance. Defaults to
+the global channel.</p></li>
 </ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Initialize a model from a result path
+&gt;&gt;&gt; import dpf
+&gt;&gt;&gt; dpf.core.DataSources(‘file.rst’)</p>
+<dl class="py method">
+<dt id="ansys.dpf.core.data_sources.DataSources._connect">
+<code class="sig-name descname">_connect</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.data_sources.DataSources._connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Capture gRPC exceptions</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.dpf.core.data_sources.DataSources.add_file_path">
+<code class="sig-name descname">add_file_path</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filepath</span></em>, <em class="sig-param"><span class="n">key</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.data_sources.DataSources.add_file_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a file path.</p>
+<p>This is used for files other than the result file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filepath</strong> (<em>str</em>) – Path of the file.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data_sources</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data_sources</span><span class="o">.</span><span class="n">add_file_path</span><span class="p">(</span><span class="s1">&#39;/tmp/ds.dat&#39;</span><span class="p">)</span>
+</pre></div>
 </div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.dpf.core.data_sources.DataSources.add_upstream">
+<code class="sig-name descname">add_upstream</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">upstream_data_sources</span></em>, <em class="sig-param"><span class="n">upstream_id</span><span class="o">=</span><span class="default_value">- 2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.data_sources.DataSources.add_upstream" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add an upstream datasources.</p>
+<p>This is used to add a set of path creating an upstram for
+recursive workflows.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>datasources</strong> (<a class="reference internal" href="#ansys.dpf.core.data_sources.DataSources" title="ansys.dpf.core.data_sources.DataSources"><em>DataSources</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.dpf.core.data_sources.DataSources.set_result_file_path">
+<code class="sig-name descname">set_result_file_path</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filepath</span></em>, <em class="sig-param"><span class="n">key</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.data_sources.DataSources.set_result_file_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the result file path</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filepath</strong> (<em>str</em>) – Path to the result file.</p></li>
+<li><p><strong>key</strong> (<em>str</em><em>, </em><em>optional</em>) – Extension of the file, found directly if it is not set.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create a data source and set the result file path</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">dpf</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data_sources</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data_sources</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="s1">&#39;/tmp/file.rst&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -261,8 +326,8 @@ classes and functions.</p>
               
               <div class='prev-next-bottom'>
                 
-    <a class='left-prev' id="prev-link" href="../user_guide/model.html" title="previous page">The DPF Model</a>
-    <a class='right-next' id="next-link" href="data_sources.html" title="next page">Data Sources Class</a>
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">API Reference</a>
+    <a class='right-next' id="next-link" href="element.html" title="next page">Element Class</a>
 
               </div>
               

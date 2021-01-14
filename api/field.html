@@ -1,0 +1,539 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Field Class &#8212; PyANSYS DPF 0.2.0 documentation</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/ansys.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="FieldsContainer Class" href="fieldscontainer.html" />
+    <link rel="prev" title="Elements Class" href="elements.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
+
+    <a class="navbar-brand" href="../index.html">
+    
+      <img src="../_static/pyansys-logo-black-cropped.png" class="logo" alt="logo" />
+    
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../getting_started/index.html">Getting Started</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../user_guide/index.html">User Guide</a>
+        </li>
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="index.html">API Reference</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../examples/index.html">Examples Gallery</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href=""></a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href=""></a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href=""></a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../contributing.html">Contributing</a>
+        </li>
+        
+        
+      </ul>
+
+
+      
+
+      <ul class="navbar-nav">
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/pyansys/DPF-Core" target="_blank" rel="noopener">
+              <span><i class="fab fa-github-square"></i></span>
+            </a>
+          </li>
+        
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+    <div class="bd-toc-item active">
+    
+  
+    <ul class="nav bd-sidenav">
+        
+        
+        
+        
+        
+        
+          
+            
+                <li class="">
+                    <a href="data_sources.html">Data Sources Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="element.html">Element Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="elements.html">Elements Class</a>
+                </li>
+            
+          
+            
+                <li class="active">
+                    <a href="">Field Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="fieldscontainer.html">FieldsContainer Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="meshed_region.html">MeshedRegion Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="model.html">Model Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="operator.html">Operator Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="plotting.html">Plotter Class</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="wrapped_operators.html">Wrapped Operators</a>
+                </li>
+            
+          
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+  
+  </nav>
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+    </ul>
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="field-class">
+<h1>Field Class<a class="headerlink" href="#field-class" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="ansys.dpf.core.field.Field">
+<em class="property">class </em><code class="sig-prename descclassname">ansys.dpf.core.field.</code><code class="sig-name descname">Field</code><span class="sig-paren">(</span><em class="sig-param">nentities=0</em>, <em class="sig-param">nature=&lt;natures.vector: 2&gt;</em>, <em class="sig-param">location='Nodal'</em>, <em class="sig-param">field=None</em>, <em class="sig-param">channel=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.field.Field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class representing evaluated data from a <code class="docutils literal notranslate"><span class="pre">ansys.dpf.core.Operator</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channel</strong> (<em>channel</em><em>, </em><em>optional</em>) – Channel connected to the remote or local instance. Defaults to
+the global channel.</p></li>
+<li><p><strong>nentities</strong> (<em>int</em>) – Number of entities</p></li>
+<li><p><strong>nature</strong> (<em>ansys.dpf.core.natures</em><em>, </em><em>optional</em>) – Nature of the field.</p></li>
+<li><p><strong>location</strong> (<em>str optional</em>) – <p>Location of the field.  For example:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Nodal&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Elemental&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;ElementalNodal&quot;</span></code></p></li>
+</ul>
+</p></li>
+<li><p><strong>field</strong> (<em>ansys.grpc.dpf.field_pb2.Field</em><em>, </em><em>optional</em>) – Field message generated from a grpc stub.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Extract a displacement field from a transient result file.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">transient</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_transient_result</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">transient</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disp</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">displacement</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fields_container</span> <span class="o">=</span> <span class="n">disp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">fields_container</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">field</span> <span class="o">=</span> <span class="n">fields_container</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">field</span><span class="p">)</span>
+<span class="go">DPF displacement_0.676628s Field</span>
+<span class="go">    Location:   Nodal</span>
+<span class="go">    Unit:       m</span>
+<span class="go">    Num. id(s): 3820</span>
+<span class="go">    Shape:      (3820, 3)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="ansys.dpf.core.field.Field.component_count">
+<em class="property">property </em><code class="sig-name descname">component_count</code><a class="headerlink" href="#ansys.dpf.core.field.Field.component_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns: <strong>ncomp</strong> – Number of component of the each elementary data
+:rtype: int</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.dpf.core.field.Field.data">
+<em class="property">property </em><code class="sig-name descname">data</code><a class="headerlink" href="#ansys.dpf.core.field.Field.data" title="Permalink to this definition">¶</a></dt>
+<dd><p>The data of this field.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>data</strong> – Data of this field.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">field</span><span class="o">.</span><span class="n">data</span>
+<span class="go">array([0.00000000e+00, 6.21536180e+02, 1.01791331e+03,</span>
+<span class="go">       8.09503532e+02, 9.04515762e+01, 9.59176333e+02,</span>
+<span class="go">       ...</span>
+<span class="go">       1.00709302e+03, 1.03186142e+03, 1.76060480e+03,</span>
+<span class="go">       1.51723816e+06, 1.28246347e+06, 1.39214534e+06])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.dpf.core.field.Field.elementary_data_count">
+<em class="property">property </em><code class="sig-name descname">elementary_data_count</code><a class="headerlink" href="#ansys.dpf.core.field.Field.elementary_data_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of elementary data in the field</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.dpf.core.field.Field.elementary_data_shape">
+<em class="property">property </em><code class="sig-name descname">elementary_data_shape</code><a class="headerlink" href="#ansys.dpf.core.field.Field.elementary_data_shape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Numpy-like shape of the field</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.dpf.core.field.Field.get_entity_data">
+<code class="sig-name descname">get_entity_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.field.Field.get_entity_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the data of the scoping’s index in parameter of the
+field.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>data</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>numpy.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.dpf.core.field.Field.get_entity_data_by_id">
+<code class="sig-name descname">get_entity_data_by_id</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.field.Field.get_entity_data_by_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the data of the scoping’s id in parameter of the field.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>data</strong> – Data based on the scoping id.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>numpy.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.dpf.core.field.Field.location">
+<em class="property">property </em><code class="sig-name descname">location</code><a class="headerlink" href="#ansys.dpf.core.field.Field.location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the field location.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>location</strong> – Location string.  Either <code class="docutils literal notranslate"><span class="pre">'Nodal'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Elemental'</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">'ElementalNodal'</span></code>.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Location for a stress field evaluated at nodes</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">field</span><span class="o">.</span><span class="n">location</span>
+<span class="go">&#39;Nodal&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.dpf.core.field.Field.max">
+<code class="sig-name descname">max</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.field.Field.max" title="Permalink to this definition">¶</a></dt>
+<dd><p>Component-wise maximum over this field</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>max</strong> – Component-wise maximum field.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>ansys.dpf.core.Field</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.dpf.core.field.Field.min">
+<code class="sig-name descname">min</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.field.Field.min" title="Permalink to this definition">¶</a></dt>
+<dd><p>Component-wise minimum over this field</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>min</strong> – Component-wise minimum field.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>ansys.dpf.core.Field</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.dpf.core.field.Field.plot">
+<code class="sig-name descname">plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">notebook</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">shell_layers</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.field.Field.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the field/fields container on mesh support if exists.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is primarily added out of convenience as plotting
+directly from the field can be slower than extracting the
+meshed region and plotting the field on top of that.  It is
+more efficient to plot with:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mesh</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">meshed_region</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mesh</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">field</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>notebook</strong> (<em>bool</em><em>, </em><em>optional</em>) – Bool, that specifies if the plotting is in the notebook as
+a static image or or as a dynamic plot outside of the
+notebook.</p></li>
+<li><p><strong>shell_layers</strong> (<em>core.ShellLayers</em><em>, </em><em>optional</em>) – Enum used to set the shell layers if the model to plot
+contains shell elements.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.dpf.core.field.Field.resize">
+<code class="sig-name descname">resize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nentities</span></em>, <em class="sig-param"><span class="n">datasize</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.field.Field.resize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allocate memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nentities</strong> (<em>int</em>) – num ids in the scoping</p></li>
+<li><p><strong>datasize</strong> (<em>int</em>) – data vector size</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.dpf.core.field.Field.scoping">
+<em class="property">property </em><code class="sig-name descname">scoping</code><a class="headerlink" href="#ansys.dpf.core.field.Field.scoping" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="ansys.dpf.core.field.Field.set_entity_data">
+<code class="sig-name descname">set_entity_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">index</span></em>, <em class="sig-param"><span class="n">scopingid</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.field.Field.set_entity_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set entity data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>list of double</em><em> or </em><em>array</em>) – </p></li>
+<li><p><strong>index</strong> (<em>int</em>) – index of the scoping</p></li>
+<li><p><strong>scopingid</strong> (<em>int</em>) – id of the scoping</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.dpf.core.field.Field.shape">
+<em class="property">property </em><code class="sig-name descname">shape</code><a class="headerlink" href="#ansys.dpf.core.field.Field.shape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Numpy-like shape of the field</p>
+<p class="rubric">Examples</p>
+<p>Shape of a stress field</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">field</span><span class="o">.</span><span class="n">shape</span>
+<span class="go">(5720, 6)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.dpf.core.field.Field.shell_layers">
+<em class="property">property </em><code class="sig-name descname">shell_layers</code><a class="headerlink" href="#ansys.dpf.core.field.Field.shell_layers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the field shell layers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dpf.core.common.ShellLayers enum value</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Enum</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.dpf.core.field.Field.size">
+<em class="property">property </em><code class="sig-name descname">size</code><a class="headerlink" href="#ansys.dpf.core.field.Field.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of elements times the number of components</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.dpf.core.field.Field.unit">
+<em class="property">property </em><code class="sig-name descname">unit</code><a class="headerlink" href="#ansys.dpf.core.field.Field.unit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Units of the field</p>
+<p class="rubric">Examples</p>
+<p>Units of a stress field</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">field</span><span class="o">.</span><span class="n">unit</span>
+<span class="go">&#39;Pa&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="elements.html" title="previous page">Elements Class</a>
+    <a class='right-next' id="next-link" href="fieldscontainer.html" title="next page">FieldsContainer Class</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2021, ANSYS.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
