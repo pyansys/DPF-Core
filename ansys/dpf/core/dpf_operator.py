@@ -1,4 +1,5 @@
 """Interface to underlying gRPC Operator"""
+from textwrap import wrap
 import logging
 import grpc
 import functools
@@ -11,7 +12,6 @@ from ansys.dpf.core.common import types, camel_to_snake_case
 from ansys.dpf.core.inputs import Inputs
 from ansys.dpf.core.outputs import Outputs
 from ansys.dpf.core.mapping_types import map_types_to_python
-from ansys.dpf.core.raw_operators import DPF_HTML_OPERATOR_DOCS
 from ansys.dpf.core.errors import protect_grpc
 
 LOG = logging.getLogger(__name__)
@@ -49,40 +49,37 @@ class Operator:
     """
 
     def __init__(self, name, channel=None):
-        """Intialize the operator with its name by connecting to a
+        """Initialize the operator with its name by connecting to a
         stub.
         """
         if channel is None:
-            channel = server._global_channel()   
-            
+            channel = server._global_channel()
+
         self.name = name
         self._channel = channel
         self._stub = self._connect()
-        
+
         self._message = None
         self._description = None
         self.inputs = None
         self.outputs = None
-        try:
-            self.__send_init_request()
-            
-            # add dynamic inputs
-            if len(self._message.spec.map_input_pin_spec) > 0:
-                self.inputs = Inputs(self._message.spec.map_input_pin_spec, self)
-            if len(self._message.spec.map_output_pin_spec)!=0:
-                self.outputs = Outputs(self._message.spec.map_output_pin_spec, self)
-            self._description = self._message.spec.description
-            
-        except grpc.RpcError as e:
-            if e.code() == grpc.StatusCode.INVALID_ARGUMENT:
-                print ("invalid operator name")
-        
 
-    def _add_sub_res_operators(self, sub_results):        
-        """Dynamically add operators instanciation for subresults 
-        (the new operators subresults are connected to the parent operator's inputs when created,
-        but are, then, completly independent of the parent operator's)
-        
+        self.__send_init_request()
+
+        # add dynamic inputs
+        if len(self._message.spec.map_input_pin_spec) > 0:
+            self.inputs = Inputs(self._message.spec.map_input_pin_spec, self)
+        if len(self._message.spec.map_output_pin_spec) != 0:
+            self.outputs = Outputs(self._message.spec.map_output_pin_spec, self)
+        self._description = self._message.spec.description
+
+    def _add_sub_res_operators(self, sub_results):
+        """Dynamically add operators instantiating for sub-results.
+
+        The new operators subresults are connected to the parent
+        operator's inputs when created, but are, then, completely
+        independent of the parent operators.
+
         Examples
         --------
         disp_oper = model.displacement()
@@ -90,18 +87,16 @@ class Operator:
         """
         for result_type in sub_results:
             bound_method = self._sub_result_op.__get__(self, self.__class__)
-            method2=functools.partial(bound_method,name=result_type["operator name"])
+            method2 = functools.partial(bound_method, name=result_type["operator name"])
             setattr(self, result_type["name"], method2)
 
-    
     def connect(self, pin, inpt, pin_out=0):
-        """Allows you to connect an input on the operator through a
-        pin number.
+        """Connect an input on the operator using a pin number.
 
         Parameters
         ----------
         pin : int
-            Number of the input pin
+            Number of the input pin.
 
         inpt : str, int, double, Field, FieldsContainer, Scoping, DataSources
             Object you wish to connect to.
@@ -150,10 +145,10 @@ class Operator:
         Parameters
         ----------
         pin : int, optional
-            Number of the ouput pin
+            Number of the output pin.
 
         output_type : core.type enum, optional
-            the requested type on the output
+            The requested type of the output.
         """
         request = operator_pb2.OperatorEvaluationRequest()
         request.op.CopyFrom(self._message)
@@ -219,19 +214,20 @@ class Operator:
 
     def __str__(self):
         # return this repr and operator one level up
-        txt = f'DPF "{self.name}" operator\n'
+        txt = f'DPF "{self.name}" Operator\n'
         if self._description:
-            line = [' ','description:', self._description]
-            txt+='{:^3} {:^6} {:^15}'.format(*line)
-            txt+='\n'
+            txt += '    Description:\n'
+            txt += '\n'.join(wrap(self._description, initial_indent='    ',
+                                  subsequent_indent='    '))
+            txt += '\n\n'
         if self.inputs:
-            line = [' ',self.inputs.__str__()]
-            txt+='{:^3} {:^21}'.format(*line)
-            txt+='\n'
+            line = [' ', str(self.inputs)]
+            txt += '{:^3} {:^21}'.format(*line)
+            txt += '\n'
         if self.outputs:
-            line = [' ',self.outputs.__str__()]
-            txt+='{:^3} {:^21}'.format(*line)
-            txt+='\n'
+            line = [' ', str(self.outputs)]
+            txt += '{:^3} {:^21}'.format(*line)
+            txt += '\n'
 
         return txt
 
@@ -257,45 +253,44 @@ class Operator:
                     corresponding_pins.append(pin)
             elif python_name == "Any":
                 corresponding_pins.append(pin)
-    
+
+    @protect_grpc
     def _sub_result_op(self, name):
-        op= Operator(name)
-        if self.inputs!=None:
+        op = Operator(name)
+        if self.inputs is not None:
             for key in self.inputs._connected_inputs:
                 inpt = self.inputs._connected_inputs[key]
                 if type(inpt).__name__ == 'dict':
                     for keyout in inpt:
                         op.connect(key,inpt[keyout],keyout)
-                else :
+                else:
                     op.connect(key,inpt)
         return op
-    
-    
+
+    @protect_grpc
     def __send_init_request(self):
         request = operator_pb2.OperatorName()
         request.name = self.name
         self._message = self._stub.Create(request)
-    
+
     def __mul__(self, inpt):
         if isinstance(inpt, Operator):
             op = Operator("dot")
-            op.connect(0,self,0)  
-            op.connect(1,inpt,0)            
+            op.connect(0, self, 0)
+            op.connect(1, inpt, 0)
         elif isinstance(inpt, float):
             op = Operator("scale")
-            op.connect(0,self,0)  
-            op.connect(1,inpt)
+            op.connect(0, self, 0)
+            op.connect(1, inpt)
         return op
-    
+
     def __truediv__(self, inpt):
         if isinstance(inpt, Operator):
             op = Operator("div")
-            op.connect(0,self,0)  
-            op.connect(1,inpt,0)            
+            op.connect(0, self, 0)
+            op.connect(1, inpt, 0)
         elif isinstance(inpt, float):
             op = Operator("scale")
-            op.connect(0,self,0)  
-            op.connect(1,1.0/inpt)
+            op.connect(0, self, 0)
+            op.connect(1, 1.0/inpt)
         return op
-    
-            

@@ -9,6 +9,7 @@ import pytest
 import pyvista as pv
 
 from ansys.dpf import core
+from ansys.dpf.core import examples
 
 # enable off_screen plotting to avoid test interruption
 pv.OFF_SCREEN = True
@@ -19,11 +20,11 @@ running_docker = os.environ.get('DPF_DOCKER', False)
 
 
 def resolve_test_file(basename, additional_path=''):
-    """Resolves a test file's full path based on the base name and the enviornment.
+    """Resolves a test file's full path based on the base name and the
+    environment.
 
     Normally returns local path unless server is running on docker and
     this repository has been mapped to the docker image at /dpf.
-
     """
     if running_docker:
         # assumes repository root is mounted at '/dpf'
@@ -42,13 +43,13 @@ def resolve_test_file(basename, additional_path=''):
 @pytest.fixture()
 def allkindofcomplexity():
     """Resolve the path of the "allKindOfComplexity.rst" result file."""
-    return resolve_test_file('allKindOfComplexity.rst')
+    return examples.download_all_kinds_of_complexity()
 
 
 @pytest.fixture()
 def simple_bar():
     """Resolve the path of the "ASimpleBar.rst" result file."""
-    return resolve_test_file('ASimpleBar.rst')
+    return examples.simple_bar
 
 
 @pytest.fixture()
@@ -84,13 +85,13 @@ def simple_rst():
 @pytest.fixture()
 def multishells():
     """Resolve the path of the "rst_operators/multishells.rst" result file."""
-    return resolve_test_file('multishells.rst', 'rst_operators')
+    return examples.multishells_rst
 
 
 @pytest.fixture()
 def complex_model():
     """Resolve the path of the "complex/fileComplex.rst" result file."""
-    return resolve_test_file('fileComplex.rst', 'complex')
+    return examples.complex_rst
 
 
 @pytest.fixture()
@@ -100,12 +101,11 @@ def plate_msup():
     Originally:
     UnitTestDataFiles/DataProcessing/expansion/msup/Transient/plate1/file.rst
     """
-    return resolve_test_file('plate1.rst', 'msup_transient')
+    return examples.msup_transient
 
 
 @pytest.fixture(scope="session", autouse=True)
 def load_operators(request):
     """This loads all the operators on initialization"""
     # could use baseservice instead...
-    core.Model(resolve_test_file('ASimpleBar.rst'))
-
+    core.Model(examples.static_rst)
