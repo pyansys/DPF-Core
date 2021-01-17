@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Field Class &#8212; PyANSYS DPF 0.2.0 documentation</title>
+    <title>Field Class &#8212; PyANSYS DPF 0.2.1 documentation</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -77,19 +77,11 @@
         </li>
         
         <li class="nav-item ">
+            <a class="nav-link" href="../operator_reference.html">Operators</a>
+        </li>
+        
+        <li class="nav-item ">
             <a class="nav-link" href="../examples/index.html">Examples Gallery</a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href=""></a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href=""></a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href=""></a>
         </li>
         
         <li class="nav-item ">
@@ -205,10 +197,6 @@
         
         
         
-        
-        
-        
-        
       </ul>
   
   </nav>
@@ -236,7 +224,7 @@
               <div>
                 
   <div class="section" id="field-class">
-<h1>Field Class<a class="headerlink" href="#field-class" title="Permalink to this headline">¶</a></h1>
+<span id="ref-api-field"></span><h1>Field Class<a class="headerlink" href="#field-class" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="ansys.dpf.core.field.Field">
 <em class="property">class </em><code class="sig-prename descclassname">ansys.dpf.core.field.</code><code class="sig-name descname">Field</code><span class="sig-paren">(</span><em class="sig-param">nentities=0</em>, <em class="sig-param">nature=&lt;natures.vector: 2&gt;</em>, <em class="sig-param">location='Nodal'</em>, <em class="sig-param">field=None</em>, <em class="sig-param">channel=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.field.Field" title="Permalink to this definition">¶</a></dt>
@@ -488,6 +476,22 @@ contains shell elements.</p></li>
 <dt id="ansys.dpf.core.field.Field.size">
 <em class="property">property </em><code class="sig-name descname">size</code><a class="headerlink" href="#ansys.dpf.core.field.Field.size" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of elements times the number of components</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ansys.dpf.core.field.Field.to_nodal">
+<code class="sig-name descname">to_nodal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.field.Field.to_nodal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert this field to one with a Nodal location.</p>
+<p>Only valid when this field’s location is ElementalNodal or
+Elemental.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Field with <code class="docutils literal notranslate"><span class="pre">location=='Nodal'</span></code>.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#ansys.dpf.core.field.Field" title="ansys.dpf.core.field.Field">Field</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">

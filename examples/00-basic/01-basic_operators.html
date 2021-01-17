@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Operators Overview &#8212; PyANSYS DPF 0.2.0 documentation</title>
+    <title>Operators Overview &#8212; PyANSYS DPF 0.2.1 documentation</title>
     
   <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -77,19 +77,11 @@
         </li>
         
         <li class="nav-item ">
+            <a class="nav-link" href="../../operator_reference.html">Operators</a>
+        </li>
+        
+        <li class="nav-item active">
             <a class="nav-link" href="../index.html">Examples Gallery</a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href=""></a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href=""></a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href=""></a>
         </li>
         
         <li class="nav-item ">
@@ -140,9 +132,7 @@
         
         
         
-        
-        
-        
+          
         
         
         
@@ -202,6 +192,8 @@ the <cite>Operators</cite> class as well as wrapped within several other
 convenience classes.</p>
 <p>This example demonstrates how to work directly with operators and
 compares it to wrapped approach.</p>
+<p>For a full listing of all available operators, please see
+<a class="reference internal" href="../../operator_reference.html#ref-dpf-operators-reference"><span class="std std-ref">Operators</span></a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
 </pre></div>
@@ -259,31 +251,31 @@ displacement operator.</p>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Available inputs:
-     -   [1mfields_container[0m : FieldsContainer, optional
-         Fields container already allocated modified inplace
-
-     -   [1mmesh[0m : MeshedRegion, optional
-
-     -   [1mmesh_scoping[0m : ScopingsContainer, Scoping, optional
+     -   mesh_scoping : ScopingsContainer, Scoping, optional
          Mesh entities scoping, unordered_map&lt;int, int&gt; id to index (optional)
          (index is optional, to be set if a user wants the results at a given
          order)
 
-     -   [1mstreams_container[0m : StreamsContainer, optional
-         Streams (result file container) (optional)
-
-     -   [1mdata_sources[0m : DataSources
+     -   data_sources : DataSources
          If the stream is null then we need to get the file path from the data
          sources
 
-     -   [1mrequested_location[0m : str, optional
+     -   requested_location : str, optional
 
-     -   [1mdomain_id[0m : int, optional
+     -   mesh : MeshedRegion, optional
 
-     -   [1mbool_rotate_to_global[0m : B, optional
+     -   fields_container : FieldsContainer, optional
+         Fields container already allocated modified inplace
+
+     -   domain_id : int, optional
+
+     -   time_scoping : Scoping, list, optional
+
+     -   bool_rotate_to_global : B, optional
          If true the field is roated to global coordinate system (default true)
 
-     -   [1mtime_scoping[0m : Scoping, list, optional
+     -   streams_container : StreamsContainer, optional
+         Streams (result file container) (optional)
 
 
 Available outputs:
@@ -382,7 +374,7 @@ Available results:
 [1.48153706e-08]
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.101 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.096 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-00-basic-01-basic-operators-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/9aa372dff2fc2ef917214ce9663244c9/01-basic_operators.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">01-basic_operators.py</span></code></a></p>

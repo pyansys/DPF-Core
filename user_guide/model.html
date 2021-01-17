@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The DPF Model &#8212; PyANSYS DPF 0.2.0 documentation</title>
+    <title>The DPF Model &#8212; PyANSYS DPF 0.2.1 documentation</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -41,7 +41,7 @@
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="API Reference" href="../api/index.html" />
+    <link rel="next" title="Operators" href="operators.html" />
     <link rel="prev" title="User Guide" href="index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -77,19 +77,11 @@
         </li>
         
         <li class="nav-item ">
+            <a class="nav-link" href="../operator_reference.html">Operators</a>
+        </li>
+        
+        <li class="nav-item ">
             <a class="nav-link" href="../examples/index.html">Examples Gallery</a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href=""></a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href=""></a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href=""></a>
         </li>
         
         <li class="nav-item ">
@@ -141,10 +133,24 @@
                 </li>
             
           
-        
-        
-        
-        
+            
+                <li class="">
+                    <a href="operators.html">Operators</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="fields_container.html">Fields Container and Fields</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="plotting.html">Plotting</a>
+                </li>
+            
+          
         
         
         
@@ -200,11 +206,12 @@ and data from the result file.</p>
 <p>To create a <code class="docutils literal notranslate"><span class="pre">Model</span></code> instance, import <code class="docutils literal notranslate"><span class="pre">dpf</span></code> and load a file.  The
 path provided must be an absolute path or a path relative to the DPF
 server.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="s1">&#39;C:/Users/user/file.rst&#39;</span><span class="p">)</span>
 
-<span class="n">model</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="s1">&#39;C:/Users/user/file.rst&#39;</span><span class="p">)</span>
-<span class="c1"># or on linux</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="s1">&#39;/home/user/file.rst&#39;</span><span class="p">)</span>
+<span class="go">Linux path</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="s1">&#39;/home/user/file.rst&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>For a full example using the model, see <a class="reference internal" href="../examples/00-basic/00-basic_example.html#ref-basic-example"><span class="std std-ref">Basic DPF-Core Usage</span></a>.</p>
@@ -213,9 +220,9 @@ server.</p>
 <p>The model contains the <code class="docutils literal notranslate"><span class="pre">results</span></code> attribute, which you can use to
 create operators to access certain results.  To view the available
 results, print them with <code class="docutils literal notranslate"><span class="pre">print(model.results)</span></code>.</p>
-<dl class="py method">
-<dt id="ansys.dpf.core.model.Model.results">
-<code class="sig-prename descclassname">Model.</code><code class="sig-name descname">results</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.model.Model.results" title="Permalink to this definition">¶</a></dt>
+<dl class="py attribute">
+<dt>
+<code class="sig-prename descclassname">Model.</code><code class="sig-name descname">results</code></dt>
 <dd><p>Available results of the model</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -283,9 +290,9 @@ get the analysis type with:</p>
 <span class="go">    Shape:      (3820, 3)</span>
 </pre></div>
 </div>
-<dl class="py method">
-<dt id="ansys.dpf.core.model.Model.metadata">
-<code class="sig-prename descclassname">Model.</code><code class="sig-name descname">metadata</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.model.Model.metadata" title="Permalink to this definition">¶</a></dt>
+<dl class="py attribute">
+<dt>
+<code class="sig-prename descclassname">Model.</code><code class="sig-name descname">metadata</code></dt>
 <dd><p>Model metadata</p>
 <p>Includes:</p>
 <ul class="simple">
@@ -335,7 +342,7 @@ numbers.</p>
               <div class='prev-next-bottom'>
                 
     <a class='left-prev' id="prev-link" href="index.html" title="previous page">User Guide</a>
-    <a class='right-next' id="next-link" href="../api/index.html" title="next page">API Reference</a>
+    <a class='right-next' id="next-link" href="operators.html" title="next page">Operators</a>
 
               </div>
               

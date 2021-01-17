@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Operator Class &#8212; PyANSYS DPF 0.2.0 documentation</title>
+    <title>Operator Class &#8212; PyANSYS DPF 0.2.1 documentation</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -77,19 +77,11 @@
         </li>
         
         <li class="nav-item ">
+            <a class="nav-link" href="../operator_reference.html">Operators</a>
+        </li>
+        
+        <li class="nav-item ">
             <a class="nav-link" href="../examples/index.html">Examples Gallery</a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href=""></a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href=""></a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href=""></a>
         </li>
         
         <li class="nav-item ">
@@ -205,10 +197,6 @@
         
         
         
-        
-        
-        
-        
       </ul>
   
   </nav>
@@ -236,7 +224,7 @@
               <div>
                 
   <div class="section" id="operator-class">
-<h1>Operator Class<a class="headerlink" href="#operator-class" title="Permalink to this headline">¶</a></h1>
+<span id="ref-api-operators"></span><h1>Operator Class<a class="headerlink" href="#operator-class" title="Permalink to this headline">¶</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">dpf.Operator</span></code> class used to represent an Operator which is an
 elementary operation.</p>
 <dl class="py class">
@@ -277,10 +265,25 @@ the global channel.</p></li>
 <li><p><strong>pin</strong> (<em>int</em>) – Number of the input pin.</p></li>
 <li><p><strong>inpt</strong> (<em>str</em><em>, </em><em>int</em><em>, </em><em>double</em><em>, </em><a class="reference internal" href="field.html#ansys.dpf.core.field.Field" title="ansys.dpf.core.field.Field"><em>Field</em></a><em>, </em><a class="reference internal" href="fieldscontainer.html#ansys.dpf.core.fields_container.FieldsContainer" title="ansys.dpf.core.fields_container.FieldsContainer"><em>FieldsContainer</em></a><em>, </em><em>Scoping</em><em>, </em><a class="reference internal" href="data_sources.html#ansys.dpf.core.data_sources.DataSources" title="ansys.dpf.core.data_sources.DataSources"><em>DataSources</em></a>) – Object you wish to connect to.</p></li>
 <li><p><strong>pin_out</strong> (<em>int</em><em>, </em><em>optional</em>) – In case of the input is an Operator, this is the output
-pin of the input Operator.  Defaults to 0</p></li>
+pin of the input Operator.  Defaults to 0.</p></li>
 </ul>
 </dd>
 </dl>
+<p class="rubric">Examples</p>
+<p>Compute the minimum of displacement by chaining the <code class="docutils literal notranslate"><span class="pre">'U'</span></code>
+and <code class="docutils literal notranslate"><span class="pre">'min_max_fc'</span></code> operators.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data_src</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">(</span><span class="n">examples</span><span class="o">.</span><span class="n">multishells_rst</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">data_src</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disp_op</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s1">&#39;U&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disp_op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">data_src</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">max_fc_op</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s1">&#39;min_max_fc&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">max_fc_op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">disp_op</span><span class="o">.</span><span class="n">outputs</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">max_field</span> <span class="o">=</span> <span class="n">max_fc_op</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">field_max</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">max_field</span><span class="o">.</span><span class="n">data</span>
+<span class="go">array([[0.59428386, 0.00201751, 0.0006032 ]])</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
