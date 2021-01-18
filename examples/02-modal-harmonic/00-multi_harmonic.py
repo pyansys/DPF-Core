@@ -22,7 +22,8 @@ from ansys.dpf.core import examples
 # that this harmonic result file contains several rpms,
 # each rpm has several frequencies.
 
-harmonic = r'c:\temp\file_harmonic_5rpm.rst'
+#this file is 66Mb size, it may take time to download
+harmonic = examples.download_multi_harmonic_result()
 model = dpf.Model(harmonic)
 print(model)
 
@@ -44,11 +45,11 @@ base.load_library("Ans.Dpf.Math.dll","math")
 ###############################################################################
 # Compute multi harmonic response
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# In this example we compute the response based on Rz of the selected nodes
-# and through multiple rpms (multiple engine orders)
+# In this example we compute the Rz multi harmonic responses based on a selected
+# nodes and a set of rpms (multiple engine orders)
 
 # Create a total displacement operator and set its time scoping to
-# the entire time freq support and its nodes scoping into user defined nodes.
+# the entire time freq support and its nodes scoping into a user defined nodes.
 dispOp = model.operator("UTOT")
 timeIds = list(range(1,model.metadata.time_freq_support.n_sets+1))
 
@@ -76,7 +77,7 @@ fft.inputs.rpm_scoping.connect(rpms)
 
 
 fields = fft.outputs.field_max()
-len(fields) #we will have a multi-harmonic response per node, here 2 fields
+len(fields) # one multi-harmonic field response per node, 
 
 field1 = fields[0]
 field2 = fields[1]
