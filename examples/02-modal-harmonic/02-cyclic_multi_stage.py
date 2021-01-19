@@ -11,7 +11,7 @@ from ansys.dpf import core as dpf
 from ansys.dpf.core import examples
 
 ###############################################################################
-# Create the model and display the state of the result.
+# The first step is to create the model and display the state of the result.
 cyc = examples.download_multi_stage_cyclic_result()
 model = dpf.Model(cyc)
 print(model)
@@ -21,7 +21,7 @@ print(model)
 # Expand displacement results
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # In this example we expand displacement results, by default on all
-# nodes and the first time step.
+# nodes and at the first time step.
 
 # Create displacement cyclic operator
 UCyc = model.operator("mapdl::rst::U_cyclic")
@@ -40,6 +40,8 @@ mesh.plot(fields)
 ###############################################################################
 # Expand stresses at a given time step
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# In this example we expand stress results, by default on all
+# nodes. It also shows how to select a specific time step. 
 
 # define stress expansion operator and request stresses at time set = 3
 SCyc = model.operator("mapdl::rst::S_cyclic")

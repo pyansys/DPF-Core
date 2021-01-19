@@ -12,7 +12,7 @@ from ansys.dpf import core as dpf
 from ansys.dpf.core import examples
 
 ###############################################################################
-# Create the model and display the state of the result.
+# The first step is to create the model and display the state of the result.
 model = dpf.Model(examples.simple_cyclic)
 print(model)
 
@@ -21,7 +21,7 @@ print(model)
 # Expand displacement results
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # In this example we expand displacement results, by default on all
-# nodes and the first time step.
+# nodes and at the first time step.
 
 # Create displacement cyclic operator
 u_cyc = model.operator("mapdl::rst::U_cyclic")
@@ -38,6 +38,7 @@ mesh.plot(fields[0])
 ###############################################################################
 # Expand stresses at a given time step
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Here we select a specific time step. 
 
 # define stress expansion operator and request stresses at time set = 8
 scyc_op = model.operator("mapdl::rst::S_cyclic")
@@ -64,6 +65,8 @@ mesh.plot(fields[0])
 ###############################################################################
 # Expand stresses at given sectors
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Here we select a specific time step and we choose to display the result 
+# on specific sectors. 
 
 # define stress expansion operator and request stresses at time set = 8
 scyc_op = model.operator("mapdl::rst::S_cyclic")
@@ -94,6 +97,8 @@ mesh.plot(fields[0])
 ###############################################################################
 # Expand stresses and average to elemental location
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Here we finally request a specific time step and compute an elemental  
+# result by chaining an averaging operator.
 
 # define stress expansion operator and request stresses at time set = 8
 scyc_op = model.operator("mapdl::rst::S_cyclic")
